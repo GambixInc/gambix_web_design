@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Services - Gambix IT Services & AI Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style id="aiero-inspired-css">
+        :root {
+            --primary-color: #45d0bd;
+            --secondary-color: #44b6e9;
+            --dark-bg: #1f1f1f;
+            --darker-bg: #0f0f0f;
+            --text-light: #ffffff;
+            --text-muted: #958c8c;
+            --text-dark: #333333;
+            --border-color: #adadad;
+            --accent-gradient: linear-gradient(135deg, #45d0bd 0%, #44b6e9 100%);
+            --button-gradient: linear-gradient(90deg, #8258c8 0%, #2c84c8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', Arial, Helvetica, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--dark-bg);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background: var(--button-gradient);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--text-light);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .service-cta {
+            background: var(--button-gradient);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Gam<span>bix</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="tai.html">TrueAI</a></li>
+                    <li><a href="team.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="header-cta">Get in Touch</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="section-container">
+            <h1 class="page-title fade-in">Our Services</h1>
+            <p class="page-subtitle fade-in">
+                Comprehensive IT solutions and AI services designed to transform your business and drive digital innovation
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">AI & Machine Learning</h3>
+                    <p class="service-description">
+                        Custom AI solutions and machine learning models to automate processes and gain valuable insights from your data.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom AI model development</li>
+                        <li>Data analysis and insights</li>
+                        <li>Process automation</li>
+                        <li>Predictive analytics</li>
+                    </ul>
+                                            <a href="contact.html" class="service-cta">Learn More</a>
+                    </div>
+
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="service-title">Custom Software Development</h3>
+                        <p class="service-description">
+                            Bespoke software solutions designed to streamline your operations and enhance productivity.
+                        </p>
+                        <ul class="service-features">
+                            <li>Web application development</li>
+                            <li>Desktop software solutions</li>
+                            <li>API development and integration</li>
+                            <li>Legacy system modernization</li>
+                        </ul>
+                        <a href="contact.html" class="service-cta">Learn More</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Scalable cloud infrastructure and migration services to optimize your IT environment.
+                    </p>
+                    <ul class="service-features">
+                        <li>Cloud migration and setup</li>
+                        <li>Infrastructure as a Service (IaaS)</li>
+                        <li>Platform as a Service (PaaS)</li>
+                        <li>Cloud security and compliance</li>
+                    </ul>
+                                            <a href="contact.html" class="service-cta">Learn More</a>
+                    </div>
+
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-title">Cybersecurity</h3>
+                        <p class="service-description">
+                            Comprehensive security solutions to protect your digital assets and ensure compliance.
+                        </p>
+                        <ul class="service-features">
+                            <li>Security audits and assessments</li>
+                            <li>Penetration testing</li>
+                            <li>Security monitoring and response</li>
+                            <li>Compliance and governance</li>
+                        </ul>
+                        <a href="contact.html" class="service-cta">Learn More</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Mobile Development</h3>
+                    <p class="service-description">
+                        Native and cross-platform mobile applications that engage users and drive business growth.
+                    </p>
+                    <ul class="service-features">
+                        <li>iOS and Android development</li>
+                        <li>Cross-platform solutions</li>
+                        <li>App store optimization</li>
+                        <li>Mobile app maintenance</li>
+                    </ul>
+                                            <a href="contact.html" class="service-cta">Learn More</a>
+                    </div>
+
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="service-title">Data Analytics</h3>
+                        <p class="service-description">
+                            Advanced analytics and business intelligence solutions to make data-driven decisions.
+                        </p>
+                        <ul class="service-features">
+                            <li>Business intelligence dashboards</li>
+                            <li>Data warehousing solutions</li>
+                            <li>Real-time analytics</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                        <a href="contact.html" class="service-cta">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gambix</h3>
+                <p>Innovative IT solutions and AI services to transform your business and drive digital success.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/GambixLLC" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/GambixIT" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@gambix797" class="social-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/gambixit/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p><a href="services.html">AI & Machine Learning</a></p>
+                <p><a href="services.html">Custom Software Development</a></p>
+                <p><a href="services.html">Cloud Solutions</a></p>
+                <p><a href="services.html">Cybersecurity</a></p>
+                <p><a href="services.html">Mobile Development</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> info@gambixit.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gambix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+</html> 

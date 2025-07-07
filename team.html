@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Projects & Team - Gambix IT Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style id="aiero-inspired-css">
+        :root {
+            --primary-color: #45d0bd;
+            --secondary-color: #44b6e9;
+            --dark-bg: #1f1f1f;
+            --darker-bg: #0f0f0f;
+            --text-light: #ffffff;
+            --text-muted: #958c8c;
+            --text-dark: #333333;
+            --border-color: #adadad;
+            --accent-gradient: linear-gradient(135deg, #45d0bd 0%, #44b6e9 100%);
+            --button-gradient: linear-gradient(90deg, #8258c8 0%, #2c84c8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', Arial, Helvetica, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--dark-bg);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background: var(--button-gradient);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(69, 208, 189, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            background: var(--button-gradient);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Team Section */
+        .team-section {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 3rem;
+            color: var(--text-light);
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .member-role {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .member-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .member-social a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .projects-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Gam<span>bix</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tai.html">TrueAI</a></li>
+                    <li><a href="team.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="header-cta">Get in Touch</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="section-container">
+            <h1 class="page-title fade-in">Our Projects & Team</h1>
+            <p class="page-subtitle fade-in">
+                Discover our innovative projects and meet the talented team behind Gambix's success
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <p class="section-subtitle fade-in">
+                Showcasing our latest work and innovative solutions across various industries
+            </p>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Powered Analytics Platform</h3>
+                        <p class="project-description">
+                            A comprehensive business intelligence platform that uses machine learning to provide actionable insights and predictive analytics.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                        <a href="/contact" class="project-link">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Mobile App</h3>
+                        <p class="project-description">
+                            A feature-rich mobile application with AI-powered product recommendations and seamless payment integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                        <a href="/contact" class="project-link">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cloud Migration Solution</h3>
+                        <p class="project-description">
+                            Complete cloud infrastructure migration for a Fortune 500 company, improving performance and reducing costs.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Terraform</span>
+                        </div>
+                        <a href="/contact" class="project-link">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cybersecurity Framework</h3>
+                        <p class="project-description">
+                            Comprehensive security solution with real-time threat detection and automated response capabilities.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Elasticsearch</span>
+                            <span class="tech-tag">Kibana</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <a href="/contact" class="project-link">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Data Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Real-time analytics dashboard providing insights into business performance and customer behavior.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                        <a href="/contact" class="project-link">View Details</a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Process Automation System</h3>
+                        <p class="project-description">
+                            Intelligent automation platform that streamlines business processes and reduces manual workload.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">RPA</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">API Integration</span>
+                        </div>
+                        <a href="/contact" class="project-link">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Meet Our Team</h2>
+            <p class="section-subtitle fade-in">
+                Talented professionals dedicated to delivering innovative solutions and exceptional results
+            </p>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Sarah Johnson</h3>
+                    <p class="member-role">CEO & Founder</p>
+                    <p class="member-bio">
+                        Visionary leader with 15+ years of experience in technology and business strategy. Passionate about AI innovation and digital transformation.
+                    </p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Michael Chen</h3>
+                    <p class="member-role">CTO</p>
+                    <p class="member-bio">
+                        Technology expert specializing in AI/ML, cloud architecture, and scalable software solutions. Leads our technical innovation initiatives.
+                    </p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Emily Rodriguez</h3>
+                    <p class="member-role">Lead AI Engineer</p>
+                    <p class="member-bio">
+                        Machine learning specialist with expertise in deep learning, computer vision, and natural language processing. Drives our AI innovation.
+                    </p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">David Kim</h3>
+                    <p class="member-role">Senior Software Engineer</p>
+                    <p class="member-bio">
+                        Full-stack developer with expertise in modern web technologies and cloud-native applications. Ensures robust and scalable solutions.
+                    </p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Lisa Thompson</h3>
+                    <p class="member-role">UX/UI Designer</p>
+                    <p class="member-bio">
+                        Creative designer focused on user experience and interface design. Creates intuitive and engaging digital experiences for our clients.
+                    </p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-member fade-in">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">Alex Morgan</h3>
+                    <p class="member-role">DevOps Engineer</p>
+                    <p class="member-bio">
+                        Infrastructure specialist with expertise in cloud platforms, CI/CD pipelines, and system automation. Ensures reliable and scalable deployments.
+                    </p>
+                    <div class="member-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gambix</h3>
+                <p>Innovative IT solutions and AI services to transform your business and drive digital success.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/GambixLLC" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/GambixIT" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@gambix797" class="social-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/gambixit/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p><a href="/services">AI & Machine Learning</a></p>
+                <p><a href="/services">Custom Software Development</a></p>
+                <p><a href="/services">Cloud Solutions</a></p>
+                <p><a href="/services">Cybersecurity</a></p>
+                <p><a href="/services">Mobile Development</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> info@gambixit.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gambix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+</html> 

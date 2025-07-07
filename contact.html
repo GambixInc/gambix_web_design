@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Contact Us - Gambix IT Services</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style id="aiero-inspired-css">
+        :root {
+            --primary-color: #45d0bd;
+            --secondary-color: #44b6e9;
+            --dark-bg: #1f1f1f;
+            --darker-bg: #0f0f0f;
+            --text-light: #ffffff;
+            --text-muted: #958c8c;
+            --text-dark: #333333;
+            --border-color: #adadad;
+            --accent-gradient: linear-gradient(135deg, #45d0bd 0%, #44b6e9 100%);
+            --button-gradient: linear-gradient(90deg, #8258c8 0%, #2c84c8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', Arial, Helvetica, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--dark-bg);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background: var(--button-gradient);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-button {
+            background: var(--button-gradient);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .form-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-details {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .map-container {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: var(--accent-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 1rem;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gradient);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">Gam<span>bix</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/tai">TrueAI</a></li>
+                    <li><a href="/team">Projects</a></li>
+                    <li><a href="/contact" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="/contact" class="header-cta">Get in Touch</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="section-container">
+            <h1 class="page-title fade-in">Get In Touch</h1>
+            <p class="page-subtitle fade-in">
+                Ready to transform your business? Let's discuss how our innovative solutions can help you achieve your goals.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form fade-in">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" id="company" name="company" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interest</label>
+                            <select id="service" name="service" class="form-select">
+                                <option value="">Select a service</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="software-dev">Custom Software Development</option>
+                                <option value="cloud">Cloud Solutions</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="mobile">Mobile Development</option>
+                                <option value="analytics">Data Analytics</option>
+                                <option value="consulting">IT Consulting</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your project or how we can help..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="contact-title">Our Location</h3>
+                        <div class="contact-details">
+                            <p>123 Innovation Drive<br>
+                            New York, NY 10001<br>
+                            United States</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="contact-title">Phone</h3>
+                        <div class="contact-details">
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">Email</h3>
+                        <div class="contact-details">
+                            <p><a href="mailto:info@gambixit.com">info@gambixit.com</a></p>
+                            <p><a href="mailto:support@gambixit.com">support@gambixit.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="contact-title">Business Hours</h3>
+                        <div class="contact-details">
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                            <p>Saturday: 10:00 AM - 2:00 PM EST</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Find Us</h2>
+            <p class="section-subtitle fade-in">
+                Visit our office or schedule a meeting to discuss your project requirements
+            </p>
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                </div>
+                <p>Interactive map showing our office location in New York, NY</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gambix</h3>
+                <p>Innovative IT solutions and AI services to transform your business and drive digital success.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/GambixLLC" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/GambixIT" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@gambix797" class="social-link" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/gambixit/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p><a href="/services">AI & Machine Learning</a></p>
+                <p><a href="/services">Custom Software Development</a></p>
+                <p><a href="/services">Cloud Solutions</a></p>
+                <p><a href="/services">Cybersecurity</a></p>
+                <p><a href="/services">Mobile Development</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope"></i> info@gambixit.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gambix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message (in a real app, you'd send this to a server)
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('scroll', handleScrollAnimations);
+        window.addEventListener('load', handleScrollAnimations);
+    </script>
+</body>
+</html> 
